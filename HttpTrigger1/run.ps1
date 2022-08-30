@@ -11,7 +11,7 @@ Write-Host "PowerShell HTTP trigger function processed a request."
 # if (-not $name) {
 #     $name = $Request.Body.data.validationCode
 # }
-$name = $Request.Body.data.validationCode
+$validationCode = $Request.Body.data.validationCode
 
 # $body = "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
 
@@ -22,5 +22,5 @@ $name = $Request.Body.data.validationCode
 # Associate values to output bindings by calling 'Push-OutputBinding'.
 Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
     StatusCode = [HttpStatusCode]::OK
-    Body = $name
+    Body = $validationCode
 })
